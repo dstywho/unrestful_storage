@@ -1,4 +1,7 @@
 UnrestfulStorage::Application.routes.draw do
+
+  root :to => "pairs#index"
+
   resources :pairs do
     collection do
       get 'append'
