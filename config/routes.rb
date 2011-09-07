@@ -1,4 +1,12 @@
 UnrestfulStorage::Application.routes.draw do
+  resources :pairs do
+    collection do
+      get 'append'
+      get 'modify'
+      get 'append_or_modify'
+    end 
+  end
+
   devise_for :users
 
   # The priority is based upon order of creation:
