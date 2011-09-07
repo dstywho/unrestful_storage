@@ -4,6 +4,7 @@ UnrestfulStorage::Application.routes.draw do
       get 'append'
       get 'modify'
       get 'append_or_modify'
+      get 'query'
     end 
   end
 

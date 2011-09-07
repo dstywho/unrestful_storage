@@ -1,4 +1,9 @@
 class PairsController < ApplicationController
+  def query
+    params[:id] ||= Pair.find_by_key(params[:key]).id
+    @pair = Pair.find(params[:id])
+    show
+  end
 
   def append
     create
@@ -35,8 +40,9 @@ class PairsController < ApplicationController
     @pair = Pair.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { render :template => 'pairs/show' }
       format.xml  { render :xml => @pair }
+      format.json { render :json => @pair }
     end
   end
 
