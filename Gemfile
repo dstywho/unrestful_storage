@@ -32,3 +32,4 @@ gem 'sqlite3'
 gem "devise"
 gem "jquery-rails"
 gem "heroku"
+gem "ruby-debug"

@@ -4,6 +4,8 @@ UnrestfulStorage::Application.routes.draw do
 
   resources :pairs do
     collection do
+      get 'grow_a'
+      get 'cut_one'
       get 'append'
       get 'modify'
       get 'append_or_modify'

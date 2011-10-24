@@ -1,12 +1,25 @@
 class PairsController < ApplicationController
+  #UNREST Begins
+
+  def grow_a
+    append
+  end
+    
+  def append
+    params[:pair] ||= {}
+    params[:pair][:key] ||= params[:key]
+    params[:pair][:value] ||= params[:key]
+    create
+  end
+
+  def find_a
+    query
+  end
+
   def query
     params[:id] ||= Pair.find_by_key(params[:key]).id
     @pair = Pair.find(params[:id])
     show
-  end
-
-  def append
-    create
   end
 
   def modify
@@ -23,8 +36,8 @@ class PairsController < ApplicationController
     end
   end
 
-  # GET /pairs
-  # GET /pairs.xml
+  #REST STARTS HERE
+
   def index
     @pairs = Pair.all
 
@@ -37,6 +50,7 @@ class PairsController < ApplicationController
   # GET /pairs/1
   # GET /pairs/1.xml
   def show
+    params[:id] ||= Pair.find_by_key(params[:key]).id
     @pair = Pair.find(params[:id])
 
     respond_to do |format|
