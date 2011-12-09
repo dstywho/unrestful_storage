@@ -30,6 +30,5 @@ gem 'sqlite3'
 #   gem 'webrat'
 # end
 gem "devise"
-gem "jquery-rails"
 gem "heroku"
 gem "ruby-debug"
