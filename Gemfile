@@ -31,4 +31,4 @@ gem 'sqlite3'
 # end
 gem "devise"
 gem "heroku"
-gem "ruby-debug"
+#gem "ruby-debug"
