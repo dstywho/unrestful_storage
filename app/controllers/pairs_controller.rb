@@ -8,7 +8,7 @@ class PairsController < ApplicationController
   def append
     params[:pair] ||= {}
     params[:pair][:key] ||= params[:key]
-    params[:pair][:value] ||= params[:key]
+    params[:pair][:value] ||= params[:value]
     create
   end
 
